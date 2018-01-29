@@ -15,3 +15,4 @@ TODO
 
 ## Technology
 TODO
+- 打造自己的知识管理体系
