@@ -1,6 +1,4 @@
-# Papers
-
-## Conference
+# Conference
 - [GitHub敏感信息泄露监控](GitHub敏感信息泄露监控.md), 01/2018, 安全+沙龙, 杭州
 
 TODO
@@ -10,12 +8,12 @@ TODO
 - 企业代码安全实践-攻, 12/2017, FreeTalk, 杭州
 - 企业代码安全实践-防, 12/2017, QCon（全球开发者大会）, 北京
 
-## Security
+# Security
 TODO
 - 人机识别之图形验证码
 - 人机识别之设备指纹
 
-## Technology
+# Technology
 TODO
 - 提升工作效率
 - 打造自己的知识管理体系
