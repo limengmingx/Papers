@@ -10,7 +10,7 @@ TODO
 
 # Security
 TODO
-## 人机识别
+### 人机识别
 - 图形验证码
 - 设备指纹Web
 - 设备指纹APP
