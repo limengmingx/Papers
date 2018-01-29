@@ -15,6 +15,8 @@ TODO
 - 设备指纹Web
 - 设备指纹APP
 
+- 企业去密码化
+
 # Technology
 TODO
 - 工作效率提升
