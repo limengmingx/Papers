@@ -11,7 +11,8 @@ TODO
 # Security
 TODO
 - 人机识别之图形验证码
-- 人机识别之设备指纹
+- 人机识别之设备指纹Web
+- 人机识别之设备指纹APP
 
 # Technology
 TODO
