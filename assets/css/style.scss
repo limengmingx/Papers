@@ -6,3 +6,25 @@
   right: 0;
   margin-right: initial;
 }
+
+header {
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  witdh: 1000px;
+  margin: 0 auto;
+}
+
+header p {
+  color: #333;
+  text-shadow: 0px 2px 0px #716f65;
+}
+
+header h1 {
+  color: #333;
+  text-shadow: 0px 2px 0px #716f65;
+}
+
+section {
+  margin-top: 30px;
+}
