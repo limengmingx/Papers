@@ -8,13 +8,17 @@
 }
 
 header {
-  padding: 25px 20px 40px 50px;
+  padding: unset;
   background: none;
   box-shadow: none;
-  text-align: left;
-  width: 1130px;
+  text-align: right;
+  width: 140px;
   margin: 0 auto;
   z-index: initial;
+  position: fixed;
+  left: 50%;
+  margin-left: -490px;
+  margin-top: 32px;
 }
 
 header p {
