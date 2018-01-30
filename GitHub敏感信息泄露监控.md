@@ -79,3 +79,7 @@ GitHub作为开源代码平台，给程序员提供了交流学习的地方，�
 而且越来越多的线索表明这类漏洞越来越多的被恶意利用，比如之前曾发现黑灰产通过大批量监控收集所有泄露的AppId和AppSecret来控制微信公众号进一步达到盈利目的、通过泄露的SSH/Redis账号密码获取主机权限并挖矿等。
 
 只有将问题充分暴露出来，大家才会正视并解决问题。
+
+#### 引用参考
+- [GSIL](https://github.com/FeeiCN/GSIL)
+- [安全+沙龙第四期-杭州站](https://mp.weixin.qq.com/s/pSZFLHPc4MczHsDiPjS7WQ)
