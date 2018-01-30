@@ -19,8 +19,8 @@
 
 #### 人机识别
 - 【TODO】图形验证码
-- 【TODO】设备指纹Web
-- 【TODO】设备指纹APP
+- 【TODO】Web设备指纹
+- 【TODO】App设备指纹
 
 #### 企业安全建设
 - 【TODO】去密码化
