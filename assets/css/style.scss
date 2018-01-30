@@ -43,7 +43,8 @@ ul {
   list-style-type: square;
 }
 
-@media print, screen and (max-width: 1060px)
-header {
-  width: auto;
+@media print, screen and (max-width: 1060px){
+  header {
+    width: auto;
+  }
 }
