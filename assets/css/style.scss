@@ -1,6 +1,5 @@
 ---
 ---
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
     display: block
 }
@@ -80,7 +79,8 @@ b, strong {
 }
 
 blockquote {
-    margin: 1em 40px
+    margin: 1em 40px;
+    border-left: 1px solid #75b5aa
 }
 
 dfn {
@@ -478,25 +478,27 @@ dt {
 }
 
 header {
-    padding: 25px 20px 40px 20px;
-    margin: 0;
+    padding: unset;
+    background: none;
+    box-shadow: none;
+    text-align: right;
+    width: 140px;
+    margin: 0 auto;
+    z-index: initial;
     position: fixed;
+    left: 50%;
+    margin-left: -490px;
+    margin-top: 32px;
     top: 0;
-    left: 0;
     right: 0;
-    width: 100%;
-    text-align: center;
-    background: url(../images/background.png) #4276b6;
-    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-    z-index: 99;
     -webkit-font-smoothing: antialiased;
     min-height: 76px
 }
 
 header h1 {
-    font: 40px/48px, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #f3f3f3;
-    text-shadow: 0px 2px 0px #235796;
+    color: #333;
+    text-shadow: 0px 2px 0px #716f65;
+    font-size: 37px;
     margin: 0px;
     white-space: nowrap;
     overflow: hidden;
@@ -506,18 +508,18 @@ header h1 {
 }
 
 header p {
-    color: #d8d8d8;
-    text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
+    color: #333;
+    text-shadow: 0px 2px 0px #716f65;
     font-size: 18px;
     margin: 0px
 }
 
 #banner {
+    right: 0;
+    margin-right: initial;
     z-index: 100;
     left: 0;
-    right: 50%;
     height: 50px;
-    margin-right: -382px;
     position: fixed;
     top: 115px;
     background: #ffcc00;
@@ -603,8 +605,7 @@ header p {
 section {
     width: 590px;
     padding: 30px 30px 50px 30px;
-    margin: 20px 0;
-    margin-top: 190px;
+    margin: 30px 0 20px 0;
     position: relative;
     background: #fbfbfb;
     border-radius: 3px;
@@ -617,9 +618,9 @@ small {
 }
 
 nav {
+    top: 150px;
     width: 230px;
     position: fixed;
-    top: 220px;
     left: 50%;
     margin-left: -580px;
     text-align: right
@@ -669,6 +670,14 @@ footer {
 }
 
 @media print, screen and (max-width: 1060px) {
+    header {
+        width: auto;
+        position: initial;
+        text-align: center;
+        left: 0;
+        margin-left: 0
+    }
+
     div.wrapper {
         width: auto;
         margin: 0
@@ -829,60 +838,9 @@ footer {
     }
 }
 
-#banner {
-    right: 0;
-    margin-right: initial
-}
-
-header {
-    padding: unset;
-    background: none;
-    box-shadow: none;
-    text-align: right;
-    width: 140px;
-    margin: 0 auto;
-    z-index: initial;
-    position: fixed;
-    left: 50%;
-    margin-left: -490px;
-    margin-top: 32px
-}
-
-header p {
-    color: #333;
-    text-shadow: 0px 2px 0px #716f65
-}
-
-header h1 {
-    color: #333;
-    text-shadow: 0px 2px 0px #716f65
-}
-
-section {
-    margin-top: 30px
-}
-
-nav {
-    top: 150px
-}
-
-blockquote {
-    border-left: 1px solid #75b5aa
-}
-
 ul {
     list-style-image: none;
     list-style-type: square
-}
-
-@media print, screen and (max-width: 1060px) {
-    header {
-        width: auto;
-        position: initial;
-        text-align: center;
-        left: 0;
-        margin-left: 0
-    }
 }
 
 #cnzz_stat_icon_1000069805 {
