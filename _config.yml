@@ -11,5 +11,4 @@ theme: jekyll-theme-leap-day
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
 permalink: /404.html
