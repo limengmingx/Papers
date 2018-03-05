@@ -10,3 +10,4 @@ github_username: feeicn
 theme: jekyll-theme-leap-day
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
