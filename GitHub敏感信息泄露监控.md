@@ -1,7 +1,7 @@
 ---
-keywords: GSIL,GitHub监控,GitHub信息泄露,敏感信息泄露
 description: 结合管理和技术手段杜绝GitHub敏感信息泄露问题，做到近实时监控预警。分享开发GitHub敏感信息监控过程中的特征采集、最佳告警响应方式、误报规则类型、漏报处理思路以及整体GitHub敏感信息泄露的现状等等一些经验。
 ---
+
 # GitHub敏感信息泄露监控
 Feei <feei#feei> 01/2018
 
