@@ -7,6 +7,7 @@
 - ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/GSIL.svg?style=social&logo=github&label=star) [GSIL](https://github.com/FeeiCN/GSIL): 近实时GitHub敏感信息泄露监控
 - ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/ESD.svg?style=social&logo=github&label=star) [ESD](https://github.com/FeeiCN/ESD): 枚举子域名
 - ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/WebProxy.svg?style=social&logo=github&label=star) [WebProxy](https://github.com/FeeiCN/WebProxy): 代理服务器并储存所有请求流量
+- ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/vulture.svg?style=social&logo=github&label=star) [Vulture](https://github.com/FeeiCN/vulture): 漏洞扫描器（暂未开源）
 
 
 #### 效率相关
