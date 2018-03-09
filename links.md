@@ -3,7 +3,7 @@ description: Feei的友情链接，一些黑客和白帽的博客。
 ---
 
 # 友情链接
-> 欢迎交换友情链接：）
+> 欢迎交换友情链接，[点击申请](https://github.com/FeeiCN/Papers/issues/new) ：）
 
 - Bre4k `安全牛` [http://bre4k.cn/](http://bre4k.cn/)
 - Lightless `安全开发牛` [http://lightless.me/](http://lightless.me/)
