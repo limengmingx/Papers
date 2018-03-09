@@ -6,7 +6,8 @@ description: 关于Feei和吴止介的介绍以及联系方式。
 
 #### 本站
 
-本站搭建在[GitHub Pages](https://pages.github.com)上，主题基于[leapday](https://github.com/mattgraham/leapday)改造。
+本站文章和主题开源在GitHub上([Papers](https://github.com/FeeiCN/Papers))，Web服务基于[GitHub Pages](https://pages.github.com)，主题基于[leapday](https://github.com/mattgraham/leapday)改造。
+
 主要写一些参加演讲的各类会议主题、大安全下的一些经验（Web安全、主机安全、移动端安全、人机识别、企业安全、业务风控、物理安全、漏洞渗透实战）和软件技术经验等。
 
 #### 简介
