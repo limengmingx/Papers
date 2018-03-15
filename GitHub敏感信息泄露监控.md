@@ -40,68 +40,68 @@ GitHub作为开源代码平台，给程序员提供了交流学习的地方，�
 - 主机域名，服务器HOST域名，比如`goods.db.mogujie.host`
 - 代码包名，Java代码包名，比如`com.mogujie.goods`
 
-**例子**
+#### 3.1.2. 如何找到其它企业内部特征？
+可以从域名特征入手，最简单的通过一些特定关键词(ex. corp/dev/inc/pre/test/copyright)搜索GitHub代码，根据代码人工确认是否是误报。找到某个确定是该企业的工程后，分析改工程其它类型的特征即可，对于下属企业可以通过域名注册人反查并循环前面的逻辑。
+比如要找蘑菇街的内部特征，可以通过在GitHub中搜索`mogujie dev`即可找到属于蘑菇街的工程，继而我们再从这类工程中找到真正的内部域名和其它类型特征。
+
+**实践例子**
 > 声明：通过本篇内容任何人都可以轻易找到任何公司的内部特征，例子只为提升理解，若觉得侵权请联系我删除。
 > 仅列取部分典型厂商的典型内部特征作为讲解。
 
 
 - 百度（BAIDU.COM）：公网域名和内网域名混用
-	- yx01.baidu.com
-	- vm.baidu.com
-	- epc.baidu.com
-	- iwm.name
-	- xdb.all.serv
+	- `yx01.baidu.com`
+	- `vm.baidu.com`
+	- `epc.baidu.com`
+	- `iwm.name`
+	- `xdb.all.serv`
 - 阿里巴巴（ALIBABA.COM）：INC和.NET是最喜欢用作内网域名
-	- alibaba-inc.com
-	- aliyun-inc.com
-	- alibaba-inc.vipserver
-	- alibaba.net
-	- alipay.net
-	- fliggy.net
-	- taobao.net
+	- `alibaba-inc.com`
+	- `aliyun-inc.com`
+	- `alibaba-inc.vipserver`
+	- `alibaba.net`
+	- `alipay.net`
+	- `fliggy.net`
+	- `taobao.net`
 - 腾讯(TENCENT.COM)：用了一个不是自己的域名
-	- tapd.oa.com
-	- proxy.tencent.com
-	- proxy.oa.com
-	- npm.oa.com
-	- tencentdb.com
-	- tencent.com
+	- `tapd.oa.com`
+	- `proxy.tencent.com`
+	- `proxy.oa.com`
+	- `npm.oa.com`
+	- `tencentdb.com`
+	- `tencent.com`
 - 京东（JD.COM）：特征独一无二，比较准
-	- jd.local
+	- `jd.local`
 - 360（360.CN）：特征独一无二，比较准
-	- qihoo.net
-- Bilibili（BILIBILI.COM）：特征独一无二，比较准
-	- bilibili.co
+	- `qihoo.net`
+- Bilibili（BILIBILI.COM）：CO域名和COM域名在搜索分词容易出问题，需要注意
+	- `bilibili.co`
 - 饿了么(ELE.ME)：特征独一无二，比较准
-	- elenet.me
+	- `elenet.me`
 - 陌陌（IMMOMO.COM）：特征独一无二，比较准
-	- wemomo.com
+	- `wemomo.com`
 - 搜狐（sohu.com）：喜欢INC
-	- sohu-inc.com
-	- sohuno.com
-	- cyou-inc.com
+	- `sohu-inc.com`
+	- `sohuno.com`
+	- `cyou-inc.com`
 - 途牛（TUNIU.COM）：喜欢ORG
-	- tuniu.org
-	- tuniu-cie.org
-	- tunie-sit.org
+	- `tuniu.org`
+	- `tuniu-cie.org`
+	- `tunie-sit.org`
 - 去哪儿（QUNAR.COM）：和百度类似，但用二级域来区分，比百度清楚
-	- dev.qunar.com
-	- package.qunar.com
-	- test.qunar.com
-	- beta.qunar.com
-	- local.qunar.com
-	- corp.qunar.com
+	- `dev.qunar.com`
+	- `package.qunar.com`
+	- `test.qunar.com`
+	- `beta.qunar.com`
+	- `local.qunar.com`
+	- `corp.qunar.com`
 - 携程（CTRIP.COM）：：特征独一无二，比较准
-	- ctripqa.com
-	- ctripcorp.com
+	- `ctripqa.com`
+	- `ctripcorp.com`
 - 爱奇艺（IQIYI.COM）：爱奇艺是区分的最好的，数据库、应用间调用、人访问的都区分开了
-	- qiyi.domain
-	- qiyi.virtual
-	- qiyi.db
-
-#### 3.1.2. 如何找到其它企业内部特征？
-可以从域名特征入手，最简单的通过一些特定关键词(ex. corp/dev/inc/pre/test/copyright)搜索GitHub代码，根据代码人工确认是否是误报。找到某个确定是该企业的工程后，分析改工程其它类型的特征即可，对于下属企业可以通过域名注册人反查并循环前面的逻辑。
-比如要找蘑菇街的内部特征，可以通过在GitHub中搜索`mogujie dev`即可找到属于蘑菇街的工程，继而我们再从这类工程中找到真正的内部域名和其它类型特征。
+	- `qiyi.domain`
+	- `qiyi.virtual`
+	- `qiyi.db`
 
 #### 3.1.3. 了解搜索特性有利于特征收集
 - 像其它搜索引擎一样，GitHub搜索会对内容进行分词，所以搜索的时候应该以单词为单位，如果有词组可以拆开用空格拼接起来搜索。
