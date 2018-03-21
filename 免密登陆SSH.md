@@ -11,8 +11,8 @@ Feei <feei#feei.cn> 06/2015
 
 SHELL中通过`except`可以实现自动化和交互式的工作，因此可以通过`expect`来操作本机的SSH，并将预先内置好的密码输入进去。
 
-安装依赖
-```
+**安装依赖**
+```bash
 yum install expect
 apt-get install expect
 ```
@@ -93,20 +93,20 @@ i=0
 for server in $AUTO_SSH_CONFIG; do
 	i=`expr $i + 1`
 	if [ $i -eq $no ] ; then
-    	# 根据编号找到服务器基本信息（IP、名字、密码、端口、是否是堡垒机）
+    		# 根据编号找到服务器基本信息（IP、名字、密码、端口、是否是堡垒机）
 		IP=`echo $server | awk -F\| '{ print $2 }'`
 		NAME=`echo $server | awk -F\| '{ print $3 }'`
 		PASS=`echo $server | awk -F\| '{ print $4 }'`
 		PORT=`echo $server | awk -F\| '{ print $5 }'`
 		ISBASTION=`echo $server | awk -F\| '{ print $6 }'`
-    	# 将这些信息输出成一个expect的临时脚本
+    		# 将这些信息输出成一个expect的临时脚本
 		FILE='/tmp/.login.sh'
 		if [ "$PORT" == "" ]; then
-      	# 端口为空时的默认端口
+      		# 端口为空时的默认端口
 			PORT=10022
 		fi
-			# 动态将组合的脚本内容输出到临时脚本文件中
-			# expect脚本, -f从文件读取命令
+		# 动态将组合的脚本内容输出到临时脚本文件中
+		# expect脚本, -f从文件读取命令
         	echo '#!/usr/bin/expect -f' > $FILE
         	# 超时时间30秒
         	echo 'set timeout 30' >> $FILE
@@ -116,14 +116,14 @@ for server in $AUTO_SSH_CONFIG; do
             echo '    set cols [stty columns]' >> $FILE
             echo '    stty rows $rows columns $cols < $spawn_out(slave,name)' >> $FILE
             echo '} WINCH' >> $FILE
-            # 调取ssh
+            	# 调取ssh
         	echo "spawn ssh -p$PORT -l "$NAME $IP >> $FILE
         	if [ "$PASS" != "" ]; then
         		# 判断是否出现需要输入密码提示
 	        	echo 'expect "password:"' >> $FILE
 	        	# 发送密码
 	        	echo 'send   '$PASS"\r" >> $FILE
-        		# 自动切sudo
+        			# 自动切sudo
 				if [ "$2" == 'sudo' ]; then
 					# 以@符号来判断是否登陆成功
 					echo 'expect "@"' >> $FILE
@@ -134,7 +134,7 @@ for server in $AUTO_SSH_CONFIG; do
 					# 输入密码
 					echo 'send   '$PASS"\r" >> $FILE
 				else
-          			# 是否是堡垒机
+          				# 是否是堡垒机
 					if [ "$ISBASTION" == 1 ] && [ "$2" != "" ]; then
 							# 以>符号来判断登陆堡垒机成功
 		        			echo 'expect ">"' >> $FILE
@@ -156,11 +156,11 @@ for server in $AUTO_SSH_CONFIG; do
 			fi
           	# 退出交互控制
         	echo 'interact' >> $FILE
-    	# 将配置好的文件加上可执行权限
+    		# 将配置好的文件加上可执行权限
 		chmod a+x $FILE
-    	# 执行该临时文件
+    		# 执行该临时文件
 		$FILE
-    	# 清空该临时文件
+    		# 清空该临时文件
 		echo '' > $FILE
 		break;
 	fi
@@ -169,17 +169,19 @@ done
 
 ## 配置和使用
 
+**将脚本拷贝到Path目录中**
 ```
 $ sudo cp autossh/autossh /usr/local/bin/
 ```
 
+**配置文件**
 ```bash
 vim ~/.autosshrc
 # 服务器名称|IP|账号|密码|端口|是否是堡垒机
 wufeifei|192.168.1.1|root|password|22|1
 ```
 
-查看机器列表
+**查看机器列表**
 ```bash
 $ autossh
 ############################################################
@@ -195,25 +197,25 @@ $ autossh
 Server Number:(Input Server Num)
 ```
 
-自动登陆第一台服务器
+**自动登陆第一台服务器**
 ```bash
 $ autossh 1
 ```
 
-自动登录第一台服务器并sudo
+**自动登录第一台服务器并sudo**
 ```bash
 $ autossh 1 sudo
 ```
 
-通过编号为1的堡垒机登陆到10.12.0.123
+**通过编号为1的堡垒机登陆到10.12.0.123**
 ```bash
 $ autossh 1 10.12.0.123
 ```
 
-通过编号为1的堡垒机登陆到10.11.0.123并切换到sudo
-```
+**通过编号为1的堡垒机登陆到10.11.0.123并切换到sudo**
+```bash
 $ autossh 1 10.11.0.123 sudo
 ```
 
 
-整个项目已开源在GitHub：[autossh](https://github.com/FeeiCN/autossh)
+已开源在GitHub：[autossh](https://github.com/FeeiCN/autossh)。
