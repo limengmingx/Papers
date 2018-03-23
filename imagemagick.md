@@ -82,6 +82,7 @@ pop graphic-context
 1. 处理图片前，先检查图片的magic bytes，也就是图片头，如果图片头不是你想要的格式，那么就不调用ImageMagick处理图片。如果你是php用户，可以使用getimagesize函数来检查图片格式，而如果你是wordpress等web应用的使用者，可以暂时卸载ImageMagick，使用php自带的gd库来处理图片。 
 
 2. 使用policy file来防御这个漏洞，这个文件默认位置在 /etc/ImageMagick/policy.xml ，我们通过配置如下的xml来禁止解析https等敏感操作： 
+
 ```xml 
 <policymap>  
   <policy domain="coder" rights="none" pattern="EPHEMERAL" />
@@ -94,7 +95,7 @@ pop graphic-context
   <policy domain="coder" rights="none" pattern="WIN" />
   <policy domain="coder" rights="none" pattern="PLT" />
 </policymap>
-``` 
+```
 
 ### 参考 
 - [ImageMagick Changelog](http://www.imagemagick.org/script/changelog.php) 
