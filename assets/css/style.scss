@@ -80,7 +80,7 @@ b, strong {
 
 blockquote {
     margin: 1em 40px;
-    border-left: 1px solid #75b5aa
+    border-left: 2px solid #dadada
 }
 
 dfn {
@@ -343,7 +343,7 @@ body {
     font-weight: 300;
     margin: 0px;
     padding: 0px 0 20px 0px;
-    background: url(../images/body-background.png) #eae6d1
+    background: #f6f6f6
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -496,8 +496,8 @@ header {
 }
 
 header h1 {
-    color: #333;
-    text-shadow: 0px 2px 0px #716f65;
+    color: #464646;
+    text-shadow: 0px 2px 0px #c7c7c7;
     font-size: 37px;
     margin: 0px;
     white-space: nowrap;
