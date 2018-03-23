@@ -16,6 +16,7 @@
 - 【TODO】代理流量
 - 【TODO】网络日志
 - 【TODO】漏洞扫描器
+- [扫描规则](payload.md)，03/2016
 
 #### 主机安全
 - 【TODO】命令实时监控
@@ -63,6 +64,7 @@
 - 【TODO】UCloud某处可GET SHELL
 - [微博某处SSRF可GET SHELL之一](PVE-2016081601.md), 08/2016
 - 【TODO】微博某处SSRF可GET SHELL之二
+- [百姓某处信息泄露可GET SHELL](PVE-2015080201.md)，08/2015
 - 【TODO】某CMS任意文件上传
 - 【TODO】某CMS SQL注入可GET SHELL
 
