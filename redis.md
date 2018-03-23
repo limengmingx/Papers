@@ -5,12 +5,12 @@ description: Redis常见的安全问题及利用方式，可以写任意文件�
 
 Feei <feei#feei.cn> 2014
 
-## 漏洞背景
+## 1. 漏洞背景
 默认Redis安装完成后只能本机访问且没有密码的，一般场景下Redis是需要被其它服务器访问的，所以就会将`/etc/redis.conf`中的`bind-ip`改为`0.0.0.0`，由此导致外网可以匿名访问Redis（不需要密码）。
 
 外网可以访问导致的问题是Redis数据外泄，除此之外若使用root账户启动的Redis则会造成GET SHELL。
 
-## 利用方式
+## 2. 利用方式
 通过Redis的`config`命令，可以写入任意文件，权限足够的情况下可写入定时任务反弹得到SHELL。
 
 **连上一台Redis**
@@ -51,7 +51,7 @@ save
 ps aux | grep 7890 | awk '{ print $2 }'|xargs kill;rm -f /var/spool/cron/root;history -c && exit
 ```
 
-## 利用姿势
+## 3. 利用姿势
 
 除了可以直接写定时任务拿到SHELL，还可以有多种姿势。
 
@@ -61,7 +61,7 @@ ps aux | grep 7890 | awk '{ print $2 }'|xargs kill;rm -f /var/spool/cron/root;hi
 - 写初始化脚本`/etc/profile.d/`
 - 主从模式利用
 
-## 漏洞自测
+## 4. 漏洞自测
 通过nmap扫描内网网段的redis匿名访问服务。（当然可以扫描外网）
 ```bash
 nmap -p6379 10.11.0/16 --script redis-info
