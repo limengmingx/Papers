@@ -658,6 +658,10 @@ nav ul li.active a {
     border-bottom: 1px solid
 }
 
+nav ul li.active a:focus {
+    outline: none
+}
+
 nav ul a {
     color: #666
 }
