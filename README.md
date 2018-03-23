@@ -56,7 +56,7 @@
 > 分享一些不一样的漏洞姿势
 
 - 【TODO】UCloud某处可GET SHELL
-- 【TODO】微博某处SSRF可GET SHELL之一
+- [微博某处SSRF可GET SHELL之一](PVE-2016081601.md), 08/2016
 - 【TODO】微博某处SSRF可GET SHELL之二
 - 【TODO】某CMS任意文件上传
 - 【TODO】某CMS SQL注入可GET SHELL
