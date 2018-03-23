@@ -1,7 +1,7 @@
 ---
 description: 介绍SSRF（服务端请求伪造）的漏洞成因、PHP和Java代码例子、漏洞复现的Payload、Exp，危害、影响以及可能出现的场景和修复方案。
 ---
-# SSRF(Server-side Request Forge, 服务端请求伪造)
+# SSRF(服务端请求伪造)
 
 Feei <feei#feei.cn> 2016
 
@@ -19,8 +19,6 @@ Feei <feei#feei.cn> 2016
 **那如果我们填写“网页翻译”服务自己的IP会怎么样呢？填入`http://127.0.0.1:80`后，发现它翻译了自己内容。**
 
 ![ssrf_02](images/ssrf_02.png)
-
-
 
 **既然能翻译自己的IP，假设这个“网页翻译”服务是部署在一个内网服务器集群里面，那填入其它服务器的内网IP不就可以获取内网的内容了？**
 
