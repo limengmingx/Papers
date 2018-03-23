@@ -1,7 +1,7 @@
-```
+---
 description: 介绍SSRF（服务端请求伪造）的漏洞成因、PHP和Java代码例子、漏洞复现的Payload、Exp，危害、影响以及可能出现的场景和修复方案。
-```
-# SSRF
+---
+# SSRF(Server-side Request Forge, 服务端请求伪造)
 
 Feei <feei#feei.cn> 2016
 
