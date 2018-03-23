@@ -53,8 +53,8 @@
 - 【TODO】网络定位
 
 #### 漏洞研究
-- [Redis](redis.md)
-- [SSRF](ssrf.md)
+- [Redis安全详解](redis.md)
+- [SSRF漏洞详解](ssrf.md)
 
 #### 漏洞实战
 > 分享一些不一样的漏洞姿势
