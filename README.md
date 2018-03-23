@@ -54,6 +54,7 @@
 
 #### 漏洞研究
 - [Redis安全详解](redis.md)
+- [ImageMagick安全详解](imagemagick.md)
 - [SSRF漏洞详解](ssrf.md)
 
 #### 漏洞实战
