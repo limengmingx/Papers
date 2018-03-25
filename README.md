@@ -63,13 +63,11 @@
 > 分享一些不一样的漏洞姿势
 
 - 【TODO】UCloud某处可GET SHELL
-- [微博某处SSRF可GET SHELL之一](PVE-2016081601.md), 08/2016
-- 【TODO】微博某处SSRF可GET SHELL之二
+- [微博某处SSRF可GET SHELL](PVE-2016081601.md), 08/2016
 - [百姓某处信息泄露可GET SHELL](PVE-2015080201.md)，08/2015
 - [某短信平台SQL注入影响数万企业](PVE-2015012501.md), 01/2015
-- [某建站平台SQL注入影响数万企业](PVE-2014092401.md), 09/2014
-- 【TODO】某CMS任意文件上传
-- 【TODO】某CMS SQL注入可GET SHELL
+- [某建站平台SQL注入影响数万知名企业](PVE-2014092401.md), 09/2014
+- [某CMS任意文件上传影响大量上市企业](PVE-2013110801.md), 11/2013
 
 ## Technology
 > 技术上的一些经验
