@@ -56,12 +56,12 @@
 - 【TODO】网络定位
 
 #### 漏洞研究
+- [SSRF漏洞详解](ssrf.md)
 - [Redis安全详解](redis.md)
 - [ImageMagick安全详解](imagemagick.md)
-- [SSRF漏洞详解](ssrf.md)
 
 #### 漏洞实战
-> 分享一些不一样的漏洞姿势
+> 分享一些有意思、有影响的漏洞姿势
 
 - [UCloud某处信息泄露可控制数万服务器](PVE-2017110101.md), 11/2017
 - [微博某处SSRF可GET SHELL](PVE-2016081601.md), 08/2016
