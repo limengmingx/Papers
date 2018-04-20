@@ -620,7 +620,7 @@ small {
 
 nav {
     top: 140px;
-    width: 230px;
+    width: 200px;
     position: fixed;
     left: 50%;
     margin-left: 120px;
@@ -670,7 +670,8 @@ nav ul li.active a:focus {
 
 nav ul a {
     color: #666;
-    font-weight: inherit
+    font-weight: inherit;
+    white-space: nowrap
 }
 
 nav ul a:hover {
