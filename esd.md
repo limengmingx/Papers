@@ -26,7 +26,7 @@ Feei<feei#feei.cn> 02/2018
 
 缺点：接口性质的子域名不会被搜索引擎收录，存在遗漏
 
-### 2.2. Google HTTPS证书透明度
+### 2.2. HTTPS证书透明度
 Google透明度报告中的[证书透明度项目](https://transparencyreport.google.com/https/certificates)是用来解决HTTPS证书系统的结构性缺陷，它能够让所有人查询各个网站的HTTPS证书信息，从而能发现签发了证书的子域名。
 [`feei.cn`的证书透明度结果](https://transparencyreport.google.com/https/certificates?cert_search_auth=&cert_search_cert=&cert_search=include_expired:true;include_subdomains:true;domain:feei.cn&lu=cert_search)
 
@@ -82,7 +82,7 @@ sni.github.map.fastly.net. 29	IN	A	151.101.77.147
 每种思路都存在漏报的可能，结合起来查询的结果才能最全面。着重说下第四种方式，通过DNS查询来枚举子域名。
 通过DNS来枚举需要解决两个问题，字典和速度。
 
-### 3.1. 字典
+### 3.1. 更全的字典
 
 **DNS服务商：从子域名中来，到子域名中去**
 
@@ -119,7 +119,7 @@ DNS服务商的字典是最准确有效的，先找到一份DNSPod公布的使�
 - [subDomainsBrute](https://github.com/lijiejie/subDomainsBrute): [subnames_full.txt](https://github.com/lijiejie/subDomainsBrute/blob/master/dict/subnames_full.txt)
 - [dnsbrute](https://github.com/Q2h1Cg/dnsbrute): [53683.txt](https://github.com/Q2h1Cg/dnsbrute/blob/v2.0/dict/53683.txt)
 
-### 3.2. 速度
+### 3.2. 更快的速度
 使用常见的多进程、多线程及gevent等都无法发挥出最大的作用。
 使用Python中的[asyncio](https://github.com/python/asyncio)+[aioDNS](https://github.com/saghul/aiodns)来获取最大速度。
 一个简单的例子:
@@ -209,7 +209,7 @@ async def start(self, tasks):
 ```
 通过扫描`qq.com`，共`170083`条规则，找到`1913`个域名，耗时`100-160`秒左右，平均`1000-1500`条/秒，后续再引入多进程可跑满带宽。
 
-## 4. 存在问题
+## 4. 主要问题
 
 **域名泛解析问题**
 
