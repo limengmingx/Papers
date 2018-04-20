@@ -475,21 +475,12 @@ dt {
 }
 
 header {
-    padding: unset;
-    background: none;
-    box-shadow: none;
-    text-align: right;
     width: 140px;
-    margin: 0 auto;
     z-index: initial;
     position: fixed;
-    left: 50%;
-    margin-left: 110px;
+    margin-left: 800px;
     margin-top: 32px;
     top: 0;
-    right: 0;
-    -webkit-font-smoothing: antialiased;
-    min-height: 76px
 }
 
 header img {
@@ -623,8 +614,7 @@ nav {
     top: 140px;
     width: 200px;
     position: fixed;
-    left: 50%;
-    margin-left: 120px;
+    margin-left: 670px;
     text-align: left
 }
 
@@ -681,9 +671,8 @@ nav ul a:hover {
 footer {
     width: 180px;
     position: fixed;
-    left: 50%;
-    margin-left: 120px;
-    bottom: 20px;
+    margin-left: 670px;
+    bottom: 40px;
     text-align: center;
     line-height: 16px
 }
