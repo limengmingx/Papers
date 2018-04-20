@@ -73,7 +73,7 @@
 
 - [GitHub敏感信息泄露监控](gsil.md) 安全+沙龙, 杭州
 - [企业业务安全开发实践(PDF)](企业业务安全开发实践.pdf) 逐鹿安全沙龙, 杭州
-- [企业安全项目架构实践](corporate-security-construction-practice.md) EISS(企业信息安全峰会), 上海
+- [企业安全项目架构实践](corporate-security.md) EISS(企业信息安全峰会), 上海
 - 【TODO】企业安全项目管理实践 Freebuf企业安全沙龙, 杭州
 - 【TODO】企业代码安全实践-攻 FreeTalk, 杭州
 - 【TODO】企业代码安全实践-防 QCon(全球开发者大会), 北京
