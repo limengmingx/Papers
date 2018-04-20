@@ -334,11 +334,12 @@ table {
 
 body {
     font: 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #666;
+    color: #495057;
     font-weight: 300;
     margin: 0px;
     padding: 0px 0 20px 0px;
-    background: #222
+    background: #f5f7fb;
+    line-height: 1.5
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -396,7 +397,7 @@ strong {
 
 .wrapper {
     width: 650px;
-    margin: 0 auto;
+    margin-left: 100px;
     position: relative
 }
 
@@ -482,12 +483,17 @@ header {
     z-index: initial;
     position: fixed;
     left: 50%;
-    margin-left: -490px;
+    margin-left: 110px;
     margin-top: 32px;
     top: 0;
     right: 0;
     -webkit-font-smoothing: antialiased;
     min-height: 76px
+}
+
+header img {
+    height: 88px;
+    border-radius: 6px;
 }
 
 header h1 {
@@ -604,8 +610,8 @@ section {
     position: relative;
     background: #fbfbfb;
     border-radius: 6px;
-    border: 1px solid #000;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4)
+    border: 1px solid #0028641f;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05)
 }
 
 small {
@@ -613,12 +619,12 @@ small {
 }
 
 nav {
-    top: 150px;
+    top: 140px;
     width: 230px;
     position: fixed;
     left: 50%;
-    margin-left: -580px;
-    text-align: right
+    margin-left: 120px;
+    text-align: left
 }
 
 nav ul {
@@ -634,7 +640,8 @@ nav ul li {
 }
 
 nav ul li.tag-h1 {
-    font-size: 1.2em
+    font-size: 1.2em;
+    line-height: 30px
 }
 
 nav ul li.tag-h1 a {
@@ -645,6 +652,10 @@ nav ul li.tag-h1 a {
 
 nav ul li.tag-h2 + .tag-h1 {
     margin-top: 10px
+}
+
+nav ul li.tag-h3 {
+    text-indent: 15px
 }
 
 nav ul li.active a {
@@ -658,7 +669,8 @@ nav ul li.active a:focus {
 }
 
 nav ul a {
-    color: #666
+    color: #666;
+    font-weight: inherit
 }
 
 nav ul a:hover {
@@ -669,9 +681,9 @@ footer {
     width: 180px;
     position: fixed;
     left: 50%;
-    margin-left: -530px;
+    margin-left: 120px;
     bottom: 20px;
-    text-align: right;
+    text-align: center;
     line-height: 16px
 }
 
