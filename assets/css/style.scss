@@ -137,11 +137,6 @@ menu, ol, ul {
     padding: 0 0 0 40px
 }
 
-nav ul, nav ol {
-    list-style: none;
-    list-style-image: none
-}
-
 img {
     border: 0;
     -ms-interpolation-mode: bicubic
@@ -398,7 +393,7 @@ strong {
 
 .wrapper {
     width: 650px;
-    margin-left: 100px;
+    margin: 0 auto;
     position: relative
 }
 
@@ -478,7 +473,7 @@ header {
     width: 140px;
     z-index: initial;
     position: fixed;
-    margin-left: 800px;
+    margin-left: 700px;
     margin-top: 32px;
     top: 0;
 }
@@ -614,7 +609,7 @@ nav {
     top: 140px;
     width: 200px;
     position: fixed;
-    margin-left: 670px;
+    margin-left: 650px;
     text-align: left
 }
 
@@ -623,6 +618,12 @@ nav ul {
     list-style-image: none;
     font-size: 14px;
     line-height: 24px
+}
+
+
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none
 }
 
 nav ul li {
