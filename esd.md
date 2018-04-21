@@ -31,7 +31,6 @@ Google透明度报告中的[证书透明度项目](https://transparencyreport.go
 [`feei.cn`的证书透明度结果](https://transparencyreport.google.com/https/certificates?cert_search_auth=&cert_search_cert=&cert_search=include_expired:true;include_subdomains:true;domain:feei.cn&lu=cert_search)
 
 ![Google证书透明度查询子域名](images/esd_02.jpg)
-
 缺点：对于只签根域名证书的情况，存在遗漏
 
 ### 2.3. 自身泄露
@@ -75,7 +74,6 @@ sni.github.map.fastly.net. 29	IN	A	151.101.77.147
 ;; WHEN: Fri Mar 02 17:28:15 CST 2018
 ;; MSG SIZE  rcvd: 128
 ```
-
 缺点：速度，存在少量漏报
 
 ## 3. 最佳实践
@@ -84,13 +82,12 @@ sni.github.map.fastly.net. 29	IN	A	151.101.77.147
 
 ### 3.1. 更全的字典
 
-**DNS服务商：从子域名中来，到子域名中去**
+#### DNS服务商：从子域名中来，到子域名中去
 
 DNS服务商的字典是最准确有效的，先找到一份DNSPod公布的使用最多的子域名：[dnspod-top2000-sub-domains.txt](https://github.com/DNSPod/oh-my-free-data/blob/master/src/dnspod-top2000-sub-domains.txt)
 
-**通用字典**
-
-一些基础的组合的字典，在大小和命中做取舍。
+##### 通用字典
+> 一些基础的组合的字典，在大小和命中做取舍。
 
 - 单字母：`f.feei.cn`（大都喜欢短一点的域名，单字符的最为常见）
 - 单字母+单数字：`s1.feei.cn`
@@ -102,18 +99,16 @@ DNS服务商的字典是最准确有效的，先找到一份DNSPod公布的使�
 - 双数字：`11.feei.cn`
 - 三数字：`666.feei.cn`
 
-**常用词组**
-
-一些最常见中英文的词组。
+#### 常用词组
+> 一些最常见中英文的词组。
 
 - `fanyi.feei.cn`（中）`tranlate.feei.cn`（英）
 - `huiyuan.feei.cn`（中）`member.feei.cn`（英）
 - `tupian.feei.cn`（中）`picture.feei.cn`（英）
 
 
-**同类爆破工具的字典**
-
-同类工具各自都收集整理了独有的字典，全部结合起来。
+#### 同类爆破工具的字典
+> 同类工具各自都收集整理了独有的字典，全部结合起来。
 
 - [subbrute](https://github.com/TheRook/subbrute): [names_small.txt](https://github.com/TheRook/subbrute/blob/master/names_small.txt)
 - [subDomainsBrute](https://github.com/lijiejie/subDomainsBrute): [subnames_full.txt](https://github.com/lijiejie/subDomainsBrute/blob/master/dict/subnames_full.txt)
@@ -134,7 +129,7 @@ result = loop.run_until_complete(f)
 print(result)
 ```
 
-**实现流程**
+#### 实现流程
 
 - 判断是否是泛解析域名
     - 查询一个绝对不存在域名的A记录，比如`enumsubdomain-feei.feei.cn`
@@ -151,7 +146,7 @@ print(result)
     - 记录耗时
     - 写入结果文件
 
-**字典生成**
+#### 字典生成
 ```python
 # https://github.com/FeeiCN/ESD/blob/master/ESD.py
 def generate_general_dicts(self, line):
@@ -175,7 +170,7 @@ def generate_general_dicts(self, line):
         return self.general_dicts
 ```
 
-**同时最多10000个协程并行运行**
+#### 同时最多10000个协程并行运行
 ```python
 # https://github.com/FeeiCN/ESD/blob/master/ESD.py
 @staticmethod
@@ -211,7 +206,7 @@ async def start(self, tasks):
 
 ## 4. 主要问题
 
-**域名泛解析问题**
+#### 域名泛解析问题
 
 通过DNS查询枚举子域名遇到的最大问题是域名泛解析问题，域名泛解析是厂商为方便维护解析记录，将域名所有情况都解析到同样服务器上。
 比如电商网站都会给店铺提供自定义域名功能，域名必然是泛解析架构。
@@ -228,14 +223,14 @@ async def start(self, tasks):
 若再次对所有子域名进行响应相似度比对的话，又会出现新的问题，部分系统设计时，如果未登录可能跳统一登录页，会导致大量误杀。
 所以暂定为ESD仅处理子域名问题，至于子域名是否解析到一个应用相同响应内容则由后续的漏洞扫描器去解决。
 
-**DNS缓存**
+#### DNS缓存
 
 各家DNS缓存结果和缓存失效策略各不相同，导致在取不存在的子域名来判断泛解析会存在问题。
 比如`xxx.feei.cn`在`114.114.114.114`上`A记录`解析的结果是`103.21.141.30`，在`223.5.5.5`上结果为`103.21.141.20`(没及时更新缓存)。
 
 只能通过多次查询来强制刷新DNS缓存，无疑增加了爆破效率。
 
-**出口线路**
+#### 出口线路
 
 有些域名为增加网站的访问速度，会针对不同线路（电信、联通、移动、教育）解析不同IP。
 
@@ -318,11 +313,11 @@ all.tuchong.com.w.kunlunca.com.	124 IN	A	180.163.155.8
 ## 5. 对抗思路
 > 虽然子域名本身就是公开的网络资产，但作为甲方安全得思考如何针对性的增大其收集子域名的难度。
 
-**使用泛解析**
+#### 使用泛解析
 
 爆破泛解析是枚举子域名的难点，而泛解析的出现就是为了方便业务快速管理子域名，既然这样那企业采用泛解析的方式利大于弊。比如在新上线子域名时不用等待域名同步时间、对于一些不存在的域名能够handle 404页面、内部对于子域名统计更加方便。
 
-**人机识别**
+#### 人机识别
 
 使用泛解析的方式仅仅是增大了时间成本，若面对的是定向攻击，攻击人员不在乎时间成本或是通过分布式的方式，则甲方需要解决人机识别，针对机器程序的页面相似度混淆。
 
