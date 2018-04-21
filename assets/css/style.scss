@@ -32,6 +32,20 @@ body {
     margin: 0
 }
 
+body *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  transition: .3s background;
+}
+
+body *::-webkit-scrollbar-thumb {
+  background: #ced4da;
+}
+
+body *:hover::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+}
+
 a:focus {
     outline: thin dotted
 }
@@ -265,7 +279,8 @@ table {
     margin-bottom: 0;
     background-color: #0000;
     border: none;
-    margin-top: 0
+    margin-top: 0;
+    overflow: hidden;
 }
 
 .highlight .err {
