@@ -10,7 +10,7 @@ Feei<feei#feei.cn> 02/2018
 开始渗透一个网站前，需要知道网站的网络资产：域名、IP等，而IP和域名有着直接的解析关系，所以如何找到网站所有子域名是关键。
 
 ## 2. 实现思路
-在知道网站主域名的情况下，可以通过以下几种方式进行域名收集。
+> 在知道网站主域名的情况下，可以通过以下几种方式进行域名收集。
 
 ### 2.1. 搜索引擎
 使用百度、Google等搜索引擎，可通过`site`关键字查询所有收录该域名的记录，而子域名权重较高会排在前面。
@@ -23,7 +23,6 @@ Feei<feei#feei.cn> 02/2018
 - Yahoo: `https://search.yahoo.com/search?p=site:feei.cn`
 
 ![搜索引擎查询子域名](images/esd_01.jpg)
-
 缺点：接口性质的子域名不会被搜索引擎收录，存在遗漏
 
 ### 2.2. HTTPS证书透明度
@@ -45,7 +44,6 @@ Google透明度报告中的[证书透明度项目](https://transparencyreport.go
 - DNSPod：`http://www.dnspod.cn/proxy_diagnose/recordscan/feei.cn?callback=feei`
 
 ![GitHub查询子域名](images/esd_03.jpg)
-
 缺点：不全面，存在遗漏
 
 ### 2.4. DNS查询
@@ -86,7 +84,7 @@ sni.github.map.fastly.net. 29	IN	A	151.101.77.147
 
 DNS服务商的字典是最准确有效的，先找到一份DNSPod公布的使用最多的子域名：[dnspod-top2000-sub-domains.txt](https://github.com/DNSPod/oh-my-free-data/blob/master/src/dnspod-top2000-sub-domains.txt)
 
-##### 通用字典
+#### 通用字典
 > 一些基础的组合的字典，在大小和命中做取舍。
 
 - 单字母：`f.feei.cn`（大都喜欢短一点的域名，单字符的最为常见）
@@ -105,7 +103,6 @@ DNS服务商的字典是最准确有效的，先找到一份DNSPod公布的使�
 - `fanyi.feei.cn`（中）`tranlate.feei.cn`（英）
 - `huiyuan.feei.cn`（中）`member.feei.cn`（英）
 - `tupian.feei.cn`（中）`picture.feei.cn`（英）
-
 
 #### 同类爆破工具的字典
 > 同类工具各自都收集整理了独有的字典，全部结合起来。
