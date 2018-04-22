@@ -255,7 +255,6 @@ table {
 
 .highlight {
     margin: 10px 0;
-    border: 1px solid #0028641f;
     border-radius: 3px;
     font-size: 0.9375rem;
     max-height: 40rem;
@@ -276,11 +275,7 @@ table {
 }
 
 .highlight pre {
-    margin-bottom: 0;
-    background-color: #0000;
-    border: none;
-    margin-top: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .highlight .err {
