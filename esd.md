@@ -125,6 +125,10 @@ f = resolver.query('google.com','A')
 result = loop.run_until_complete(f)
 print(result)
 ```
+可能会有疑问，大并发下会不会被DNS Server封禁？
+
+由于DNS查询特性，当我们通过114DNS（`114.114.114.114`）查询`feei.cn`的A记录时，114DNS若没有该记录则会去查询`CN`域名根节点服务器。
+同理，114DNS自身也会被其他DNS Server当做根节点服务器被大量查询，同时使用114的DNS的正常用户太多，对于速度的封禁会很容易造成误杀，至少目前并不用太担心封禁问题。
 
 #### 实现流程
 
@@ -198,20 +202,27 @@ def test_generate_general_dict():
 ```
 # 单字母26个
 26      {letter}
+
 260     {letter}{number}
 676     {letter}{letter}
 6760    {letter}{letter}{number}
 67600   {letter}{letter}{number}{number}
+
 # 三字母17576个
 17576   {letter}{letter}{letter}
+
 # 需要注意的是，四字母45万个，在效率上会指数级增长，但四字母也是最常用的子域
 456976  {letter}{letter}{letter}{letter}
+
 10      {number}
 100     {number}{number}
 1000    {number}{number}{number}
 ```
 
 #### 同时最多10000个协程并行运行
+当不对并发进行限制时，会导致内存暴涨和文件描述符用完的情况。
+为了能够在普通PC上保持内存稳定的运行，将限制最大并发10000个协程。
+
 ```python
 # https://github.com/FeeiCN/ESD/blob/master/ESD.py
 @staticmethod
