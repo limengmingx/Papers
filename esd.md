@@ -144,6 +144,7 @@ print(result)
     - 写入结果文件
 
 #### 字典生成
+对于通用类型的字典，比如常见的字母和数字组合可以动态生成。
 ```python
 # https://github.com/FeeiCN/ESD/blob/master/ESD.py
 def generate_general_dicts(self, line):
@@ -165,6 +166,49 @@ def generate_general_dicts(self, line):
         return number_dicts
     else:
         return self.general_dicts
+```
+
+```python
+def test_generate_general_dict():
+    start_time = time.time()
+    esd = EnumSubDomain('feei.cn')
+    rules = {
+        '{letter}': 26,
+        '{letter}{number}': 260,
+        '{letter}{letter}': 676,
+        '{letter}{letter}{number}': 6760,
+        '{letter}{letter}{number}{number}': 67600,
+        '{letter}{letter}{letter}': 17576,
+        '{letter}{letter}{letter}{number}{number}': 1757600,
+        '{letter}{letter}{letter}{letter}': 456976,
+        '{number}': 10,
+        '{number}{number}': 100,
+        '{number}{number}{number}': 1000,
+    }
+
+    for k, v in rules.items():
+        esd.general_dicts = []
+        dicts = esd.generate_general_dicts(k)
+        print(len(dicts), k)
+        assert len(dicts) == v
+    print(time.time() - start_time)
+```
+
+
+```
+# 单字母26个
+26      {letter}
+260     {letter}{number}
+676     {letter}{letter}
+6760    {letter}{letter}{number}
+67600   {letter}{letter}{number}{number}
+# 三字母17576个
+17576   {letter}{letter}{letter}
+# 需要注意的是，四字母45万个，在效率上会指数级增长，但四字母也是最常用的子域
+456976  {letter}{letter}{letter}{letter}
+10      {number}
+100     {number}{number}
+1000    {number}{number}{number}
 ```
 
 #### 同时最多10000个协程并行运行
