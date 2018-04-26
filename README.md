@@ -4,9 +4,6 @@
 ### 1.1. Web安全
 - [GitHub敏感信息泄露监控](gsil.md) 安全+沙龙, 杭州
 - [枚举子域名](esd.md), 02/2018
-- 【TODO】代理流量
-- 【TODO】网络日志
-- 【TODO】漏洞扫描器
 - [源代码审计](cobra.md), 06/2016
 - [扫描规则](payload.md), 03/2016
 - [登录框劫持](login-hijacking.md), 11/2015
