@@ -1,4 +1,5 @@
 # EXIF - 隐藏在图片中的重要信息
+Feei <feei#feei> 05/2018
 
 EXIF指可交换图片文件格式（Exchangeable Image file Format），可以在图片中记录数码相机的相关数据，比如拍摄的设备、拍摄的参数以及地理位置等。
 
