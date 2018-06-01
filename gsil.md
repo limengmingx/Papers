@@ -166,7 +166,7 @@ GitHub作为开源代码平台，给程序员提供了交流学习的地方，�
 ### 4.2. 找不到作者
 
 找不到作者先整改泄露的信息，优先级由外而内，把危害降到最低。
-再让公司法务或信息安全团队通过(GitHub DCMA（数字千年版权法案）处理规则)[https://help.github.com/articles/guide-to-submitting-a-dmca-takedown-notice/]向GitHub发送邮件进行处理，一般三天左右会有答复。
+再让公司法务或信息安全团队通过[GitHub DCMA（数字千年版权法案处理规则](https://help.github.com/articles/guide-to-submitting-a-dmca-takedown-notice/)向GitHub发送邮件进行处理，一般三天左右会有答复。
 
 几个注意的点
 
