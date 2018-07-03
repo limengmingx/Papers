@@ -28,9 +28,7 @@ EXIF指可交换图片文件格式（Exchangeable Image file Format），可以�
 
 ## 技术实现
 
-[exif-py](https://github.com/ianare/exif-py)是一个基础的EXIF解析Python模块，使用它可以方便的读取图片中的EXIF元数据。
-
-下面是一张iPhone的全部EXIF元数据信息的中英文对照。
+下面是一张iPhone拍摄的图片全部EXIF元数据信息:
 
 ```python
 # https://github.com/FeeiCN/EXIF
@@ -98,6 +96,74 @@ TRANSLATE_KEY = {
     'EXIF LensModel': '镜头模型',  # iPhone X back dual camera 4mm f/1.8
 }
 ```
+
+[exif-py](https://github.com/ianare/exif-py)是一个基础的EXIF解析Python模块，使用它可以方便的读取图片中的EXIF元数据。
+
+```python
+def read_exif(path):
+    data = {
+        'image': [],
+        'other': {}
+    }
+
+    # 基础信息
+    data['image'].append('文件类型: {type}'.format(type=os.path.splitext(path)[1].upper()))
+    data['image'].append('文件创建时间: {time}'.format(time=creation_date(path)))
+    data['image'].append('文件修改时间: {time}'.format(time=modification_date(path)))
+    data['image'].append('文件大小: {size}'.format(size=file_size(path)))
+
+    f = open(path, 'rb')
+    tags = exifread.process_file(f)
+    for key, value in tags.items():
+        key = key.strip()
+        if key not in ('JPEGThumbnail', 'TIFFThumbnail', 'Filename', 'EXIF MakerNote'):
+            t_tag = key
+            if key in TRANSLATE_KEY and TRANSLATE_KEY[key] != '':
+                t_tag = TRANSLATE_KEY[key]
+                if t_tag is None:
+                    print('SKIP TAG', key)
+                    continue
+            t_value = value
+            if str(value) in TRANSLATE_VALUE and TRANSLATE_VALUE[str(value)] != '':
+                t_value = TRANSLATE_VALUE[str(value)]
+            print(t_tag, '-', t_value)
+
+            # Special Cover Value
+            if key in ['GPS GPSLatitude', 'GPS GPSLongitude']:
+                tmp_v = str(t_value).replace('[', '').replace(']', '').split(', ')
+                for i in range(len(tmp_v)):
+                    if '/' in tmp_v[i]:
+                        tmp_v[i] = float(int(tmp_v[i].split('/')[0]) / int(tmp_v[i].split('/')[1]))
+                    else:
+                        tmp_v[i] = float(int(tmp_v[i]))
+                t_value = cover_gps(tmp_v[0], tmp_v[1], tmp_v[2])
+                data['other'][key.split(' ')[1]] = t_value
+            if key in ['EXIF DateTimeOriginal', 'EXIF DateTimeDigitized', 'Image DateTime', 'GPS GPSDate']:
+                if ' ' in str(t_value):
+                    t_value = '{date} {time}'.format(date=str(t_value).split(' ')[0].replace(':', '-'), time=str(t_value).split(' ')[1])
+                else:
+                    t_value = str(t_value).replace(':', '-')
+
+            if 'Image ' in key:
+                tag = 'image'
+            elif 'GPS ' in key:
+                tag = 'gps'
+            elif 'EXIF ' in key:
+                tag = 'exif'
+            else:
+                tag = key
+            v = '{t_tag}: {v}'.format(t_tag=t_tag, v=str(t_value))
+            if tag in data:
+                print(v)
+                data[tag].append(v)
+            else:
+                data[tag] = [v]
+        else:
+            print('NOT IN', key, value)
+    return data
+```
+
+
 
 #### GPS坐标转换
 
@@ -184,9 +250,9 @@ def modification_date(path):
 - 通过邮件/蓝牙/FTP等方式传输，照片中的GPS/EXIF信息都将会保存。
 - 通过PhotoShop修图，若**使用“储存为”则所有EXIF/GPS信息都会存在**，若**使用“储存为Web格式”则所有EXIF/GPS信息都会被抹去**。
 
-## 开放使用
+## 开源
 
-整个项目已上线（[http://exif.feei.cn](http://exif.feei.cn)），欢迎免费试用。
+整个项目已开源至GitHub([https://github.com/FeeiCN/EXIF](https://github.com/FeeiCN/EXIF))。
 
 ![EXIF Web](images/exif_03.jpg)
 
@@ -194,6 +260,7 @@ def modification_date(path):
 
 **参考引用**
 
+- [EXIF Source(GitHub)](https://github.com/FeeiCN/EXIF)
 - [EXIF标准 v2.3](http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf)
 - [exif-py](https://github.com/ianare/exif-py)
 - [GPS坐标格式转换公式](https://en.wikipedia.org/wiki/Geographic_coordinate_conversion)
