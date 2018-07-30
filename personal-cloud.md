@@ -2,10 +2,10 @@
 
 Feei <feei#feei.cn> 04/2017
 
-## 1. 目标
+## 0x01 目标
 无论是在公司（Macbook）、在家（iMac Pro）、出差（iPad Pro）或在路上（iPhone X），都能解决各种工作事情。
 
-## 2. 实践
+## 0x02 实践
 - 账号密码：使用Keychain Access免密登陆macOS端的网站和iOS端的App、所有密码在Confluence（Web）中存一份用作备份及部分不能自动保存密码的应用查询使用。
 - 文档：搭配iCloud使用Keynote、Pages、Numbers可以在macOS和iOS上无缝且随时随地的切换使用。
 - 知识：零碎知识或瞬间的点子使用Notes（macOS/iOS）记录、完整梳理过的知识放在Confluence（Web）。

@@ -6,7 +6,7 @@ description: 详细介绍ImageMagick的漏洞危害自测方法、利用方式EX
 
 Feei <feei#feei.cn>
 
-## 1. 漏洞危害 
+## 0x01 漏洞危害 
 ImageMagick是用来处理图片的通用组件，涉及众多语言与平台。 
 
 - PHP(imagick/MagickWand) 
@@ -26,7 +26,7 @@ ImageMagick是用来处理图片的通用组件，涉及众多语言与平台。
 
 此次漏洞导致的直接危害为**远程代码执行（RCE）** 也就是说，如果你的业务中有用到ImageMagick处理图片，则攻击者只需要上传一个特殊构造的图片即可拿到你服务器的权限。 
 
-## 2. 检测方式 
+## 0x02 检测方式 
 
 **检查是否有使用**
 一般ImageMagick用在处理图片的裁剪、压缩以及水印等地方。如果你网站有上传图片的地方，就极有可能用到了。
@@ -36,7 +36,7 @@ ImageMagick是用来处理图片的通用组件，涉及众多语言与平台。
 PHP代码关键字：```Imagick``` 
 Java代码关键字：```MagickImage``` 
 
-#### 1. 通过版本号确认是否存在 
+#### 通过版本号确认是否存在 
 
 **6.9.3-9**之前的版本都存在该漏洞(**6.9.3-9**版本不完全修复该漏洞)，建议升级至最新的**2016-05-09 7.0.1-3**。 
 ```bash 
@@ -46,15 +46,15 @@ Copyright: Copyright (C) 1999-2013 ImageMagick Studio LLC
 Features: DPC OpenMP Delegates: bzlib fontconfig freetype gslib jng jpeg pango png ps tiff x xml zlib 
 ```
 
-#### 2. 检测脚本 
+#### 检测脚本 
 
 ```bash 
 $ git clone https://github.com/ImageTragick/PoCs.git 
 $ cd PoCs 
 $ ./test.sh 
-``` 
+```
 
-## 3. 利用方式 
+## 0x03 利用方式 
 
 在自己服务器（此处演示为103.21.140.84）上开启监听端口7890 
 
@@ -73,7 +73,7 @@ pop graphic-context
 
 在自己服务器（此处演示为103.21.140.84）上查看是否有反弹SHELL 
 
-## 4. 修复方式 
+## 0x04 修复方式 
 
 **升级ImageMagick至最新的[2016-05-09 7.0.1-3](http://www.imagemagick.org/script/binary-releases.php)版本。** 
 
@@ -96,7 +96,9 @@ pop graphic-context
 </policymap>
 ```
 
-### 参考 
+**参考**
+
 - [ImageMagick Changelog](http://www.imagemagick.org/script/changelog.php) 
 - [ImageTragick](https://imagetragick.com/)
 - [PHP Imagick](http://pecl.php.net/package/imagick)
+

@@ -3,7 +3,7 @@ Feei <feei#feei> 05/2018
 
 EXIF指可交换图片文件格式（Exchangeable Image file Format），可以在图片中记录数码相机的相关数据，比如拍摄的设备、拍摄的参数以及地理位置等。
 
-## 技术原理
+## 0x01 技术原理
 
 最新的[EXIF v2.3](http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf)由CIPA(相机影像产品工业协会)和JEITA(日本电子信息技术产业协会)制定，
 
@@ -26,7 +26,7 @@ EXIF指可交换图片文件格式（Exchangeable Image file Format），可以�
 
 根据标准中每项信息标记的点可以读取图片背后对应的信息。
 
-## 技术实现
+## 0x02 技术实现
 
 下面是一张iPhone拍摄的图片全部EXIF元数据信息:
 
@@ -227,7 +227,7 @@ def modification_date(path):
     return datetime.datetime.fromtimestamp(os.path.getmtime(path)).strftime('%Y-%m-%d %H:%M:%S')
 ```
 
-## 使用场景
+## 0x03 使用场景
 
 通过一张图片可以获取到的信息：
 
@@ -250,7 +250,7 @@ def modification_date(path):
 - 通过邮件/蓝牙/FTP等方式传输，照片中的GPS/EXIF信息都将会保存。
 - 通过PhotoShop修图，若**使用“储存为”则所有EXIF/GPS信息都会存在**，若**使用“储存为Web格式”则所有EXIF/GPS信息都会被抹去**。
 
-## 开源
+## 0x04 开源
 
 整个项目已开源至GitHub([https://github.com/FeeiCN/EXIF](https://github.com/FeeiCN/EXIF))。
 
