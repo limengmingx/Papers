@@ -30,4 +30,8 @@ $(function() {
   sectionHeight();
 
   $('img').on('load', sectionHeight);
+  
+  if (location.protocol != 'https:') {
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+  }
 });
