@@ -15,6 +15,7 @@
 - 【TODO】企业安全项目管理实践 Freebuf企业安全沙龙, 杭州
 - 【TODO】企业代码安全实践-攻 FreeTalk, 杭州
 - 【TODO】企业代码安全实践-防 QCon(全球开发者大会), 北京
+- [安全招聘](recruit.md)
 
 ### 漏洞研究
 - [短信监控](sms-sniffing.md)
