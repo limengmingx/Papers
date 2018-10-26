@@ -7,7 +7,6 @@
 - [枚举子域名](esd.md), 02/2018
 - [源代码审计](cobra.md), 06/2016
 - [扫描规则](payload.md), 03/2016
-- [登录框劫持](login-hijacking.md), 11/2015
 
 ### 企业安全
 - [企业安全项目架构实践](corporate-security.md) EISS(企业信息安全峰会), 上海
@@ -15,13 +14,13 @@
 - 【TODO】企业安全项目管理实践 Freebuf企业安全沙龙, 杭州
 - 【TODO】企业代码安全实践-攻 FreeTalk, 杭州
 - 【TODO】企业代码安全实践-防 QCon(全球开发者大会), 北京
+- 【TODO】企业终端安全一站式防护 SSC, 西安
 - [安全招聘](recruit.md)
 
 ### 漏洞研究
-- [短信监控](sms-sniffing.md)
-- [SSRF漏洞详解](ssrf.md)
-- [Redis安全详解](redis.md)
-- [ImageMagick安全详解](imagemagick.md)
+- [短信监控](sms-sniffing.md)，09/2015
+- [SSRF漏洞详解](ssrf.md)，2016
+- [Redis安全详解](redis.md)，2014
 
 ### 漏洞实战
 > 分享一些有意思、有影响的漏洞姿势
