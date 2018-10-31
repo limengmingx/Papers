@@ -21,7 +21,7 @@
 - [短信监控](sms-sniffing.md)，09/2015
 - [SSRF漏洞详解](ssrf.md)，2016
 - [Redis安全详解](redis.md)，2014
-- [正则安全](regexg.md)
+- [正则安全](regexp.md)
 
 ### 漏洞实战
 > 分享一些有意思、有影响的漏洞姿势
